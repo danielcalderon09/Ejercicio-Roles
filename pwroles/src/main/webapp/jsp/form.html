@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="layout/layout :: head">
+	<link rel"stylesheet" href="form.css">
+	<meta charset="utf-8">
+</head>
+<body>
+
+<header th:replace="layout/layout :: header"></header>
+<br>
+<div>
+    <div>
+        <h1 class="form-title" th:text="${titulo}"></h1>
+        <div>
+            <form class="form-container">
+                <input type="hidden" name="id" th:field="*{id}" th:value="${usuario.id}"/>
+                <div class="form-group">
+                    <label for="nombre" class="form-label">Nombre : </label>
+                    <input type="text" name="nombre" th:field="*{nombre}" class="form-input"/>
+                    <small class="form-error-message"></small>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="form-label">Email : </label>
+                    <input type="text" name="email" th:field="*{email}" class="form-input"/>
+                    <small class="form-error-message"></small>
+                </div>
+                <div class="form-group">
+                    <label for="fecha" class="form-label">Fecha : </label>
+                    <input type="date" name="fecha" th:field="*{fecha}" class="form-input"/>
+                    <small class="form-error-message"></small>
+                </div>
+                <div class="form-group">
+                    <label for="telefono" class="form-label">Teléfono : </label>
+                    <input type="number" name="telefono" th:field="*{telefono}" class="form-input"/>
+                    <small class="form-error-message"></small>
+                </div>
+                
+                <div class="form-group">
+                    <input type="submit" value="Guardar" class="form-submit-button">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

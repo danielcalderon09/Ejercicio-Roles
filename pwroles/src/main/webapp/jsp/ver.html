@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="layout/layout :: head">
+<link rel="stylesheet" href="ver.css" />
+<meta charset="utf-8">
+</head>
+<body>
+
+	<header th:replace="layout/layout :: header"></header>
+	
+	<div class="employee-details">
+	   <div class="employee-card">
+	       <div class="employee-name" th:text="${titulo}"></div>
+	       <div class="employee-info">
+	          <ul class="employee-list">
+	             <li class="active" th:text="${empleado.nombre}"></li>
+	             <li th:text="${empleado.apellido}"></li>
+	             <li th:text="${empleado.email}"></li>
+	             <li th:text="${empleado.fecha}"></li>
+	             <li th:text="${empleado.telefono}"></li>
+	             <li th:text="${empleado.sexo}"></li>
+	             <li th:text="${empleado.salario}"></li>
+	          </ul>
+	       </div>
+	   </div>
+	</div>
+
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>

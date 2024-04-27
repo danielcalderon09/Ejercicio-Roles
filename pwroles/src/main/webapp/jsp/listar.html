@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="layout/layout :: head">
+    <meta charset="utf-8">
+<link rel="stylesheet" href="listar.css" />
+</head>
+<body>
+
+    <header th:replace="layout/layout :: header"></header>
+
+    <div class="main-content"> 
+        <div class="user-table-container"> 
+            <div class="user-table-title"> 
+                <div th:text="${titulo}"></div>
+            </div>
+            <div class="user-table"> 
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Email</th>
+                            <th>Fecha</th>
+                            <th>Telefono</th>
+                            <th>Detalles</th>
+                            <th sec:authorize="hasRole('ADMIN')">Editar</th>
+                            <th sec:authorize="hasRole('ADMIN')">Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="usuario : ${usuario}">
+                            <td th:text="${usuario.id}"></td>
+                            <td th:text="${usuario.nombre}"></td>
+                            <td th:text="${usuario.email}"></td>
+                            <td th:text="${usuario.fecha}"></td>
+                            <td th:text="${usuario.telefono}"></td>
+                            <td>
+                                <a class="btn btn-info btn-sm" th:href="@{/ver/} + ${empleado.id}">Detalles</a>
+                            </td>
+                            <td sec:authorize="hasRole('ADMIN')">
+                                <a class="btn btn-warning btn-sm" th:href="@{/form/} + ${empleado.id}">Editar</a>
+                            </td>
+                            <td sec:authorize="hasRole('ADMIN')">
+                                <a class="btn btn-danger btn-sm" th:href="@{/eliminar/} + ${empleado.id}" onclick="return confirm('¿Estás seguro de eliminar el usuario?');">Eliminar</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        
+        </div>
+    </div>
+
+</body>
+</html>

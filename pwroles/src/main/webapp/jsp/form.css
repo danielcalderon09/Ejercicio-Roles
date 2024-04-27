@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+
+  body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.form-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.form-container {
+  width: 30rem;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  display: inline-block;
+  margin-bottom: 0.25rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.form-error-message {
+  display: none;
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  color: red;
+}
+
+.form-submit-button {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.form-submit-button:hover {
+  background-color: #444;
+}

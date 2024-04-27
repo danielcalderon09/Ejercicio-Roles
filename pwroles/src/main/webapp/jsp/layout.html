@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel"stylesheet" href="layout.css">
+<title>ROLES</title>
+</head>
+<body>
+
+
+<header th:fragment="header">
+	<nav class="site-nav site-nav-claro oscuro">
+		<a class="site-navbar-brand" href="/">Roles</a>
+		<button class="site-navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#site-navbar" aria-controls="site-navbar"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="sit-nav-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="site-navbar">
+		    <ul class="site-navbar-nav">
+		       <li class="site-navbar-nav-item"><a class="site-nav-link">Bienvenido [[${#httpServletRequest.remoteUser}]]
+		           </a>
+		       </li>
+		    </ul>
+		    <form class="d-flex" th:action="@{/logout}" method="post">
+		              <input class="btn btn-secondary" type="submit" value="Cerrar sesión" />
+		           </form>
+		</div>
+	</nav>
+</header>
+
+<div class="site-container">
+	<div th:if="${success != null}"
+		class="site-alert site-alert-primary site-alert-dismissible fade show">
+		[[${success}]]>
+		<button type="button" class="site-close" data-dismiss="alert"
+			aria-label="Close"></button>
+	</div>
+</div>
+
+<div class="site-container">
+	<div th:if="${error != null}"
+		class="site-alert site-alert-danger site-alert-dismissible fade show">
+		[[${error}]]>
+		<button type="button" class="site-close" data-dismiss="alert"
+			aria-label="Close"></button>
+	</div>
+</div>
+
+<div class="site-container">
+	<div th:if="${warning != null}"
+		class="site-alert site-alert-warning site-alert-dismissible fade show">
+		[[${warning}]]>
+		<button type="button" class="site-close" data-dismiss="alert"
+			aria-label="Close"></button>
+	</div>
+</div>
+
+<div class="site-container">
+	<div th:if="${info != null}"
+		class="site-alert site-alert-info site-alert-dismissible fade show">
+		[[${info}]]>
+		<button type="button" class="site-close" data-dismiss="alert"
+			aria-label="Close"></button>
+	</div>
+</div>
+
+</body>
+</html>

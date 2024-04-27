@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Roles</title>
+	<link rel="stylesheet" href="login.css" />
+</head>
+<body>
+	<header class="header">
+		<nav class="navbar">
+			<a class="main-navbar-brand" href="/login">Roles</a>
+			<button class="navbar-button">
+				<span class="button-span"></span>
+			</button>
+		</nav>
+	</header>
+	<section class="section">
+		<div class="section-div">
+			<h3 class="text-center animation-slideDown">Inicio de sesión</h3>
+			<div class="error-div" th:if="${param.error}">
+				<div class="error-alert alert alert-danger alert-dismissible fade show" role="alert">
+					Username o password inválidos
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+			</div>
+			<div class="logout-div" th:if="${param.logout}">
+				<div class="logout-alert alert alert-primary alert-dismissible fade show" role="alert">
+					Ha cerrado sesión exitosamente
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+			</div>
+			<form class="login-form">
+				<div class="form-div">
+					<input type="text" id="username" name="username" class="form-control" placeholder="Nombre de usuario" />
+				</div>
+				<div class="form-div">
+					<input type="password" id="password" name="password" class="form-control" placeholder="Password" />
+				</div>
+				<button type="submit" class="submit-button">Iniciar sesión</button>
+			</form>
+		</div>
+	</section>
+</body>
+</html>
